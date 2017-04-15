@@ -77,9 +77,10 @@ class Router
   public static function dispatch($url)
   {
     if (self::matchRoute($url)) {
-      http_response_code(200);
-      $controller = self::$route['controller'];
+      $controller = self::upperCamelCase(self::$route['controller']);
+      self::upperCamelCase($controller);
       if (class_exists($controller)) {
+        http_response_code(200);
         echo 'OK';
       } else {
         echo "Контроллер <b>$controller</b> не найден";
@@ -88,5 +89,18 @@ class Router
       http_response_code(404);
       echo '404';
     }
+  }
+
+  /**
+  * Приводим имя контроллера к нормальному виду
+  * @param string $name
+  * @return string
+  */
+  protected static function upperCamelCase($name)
+  {
+    $name = str_replace('-', ' ', $name);
+    $name = ucwords($name);
+    $name = str_replace(' ', '', $name);
+    return $name;
   }
 }
