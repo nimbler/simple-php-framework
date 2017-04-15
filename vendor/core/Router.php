@@ -137,7 +137,6 @@ class Router
         return '';
       }
     }
-    debug($params);
     return $url;
   }
 }
