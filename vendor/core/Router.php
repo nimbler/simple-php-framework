@@ -63,4 +63,18 @@ class Router
     }
     return false;
   }
+
+  /**
+  *
+  */
+  public static function dispatch($url)
+  {
+    if (self::matchRoute($url)) {
+      http_response_code(200);
+      echo 'OK';
+    } else {
+      http_response_code(404);
+      echo '404';
+    }
+  }
 }
