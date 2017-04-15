@@ -6,8 +6,8 @@
 class Main
 {
 
-  function __construct()
+  function index()
   {
-    echo "Main::__construct";
+    echo "Main::index";
   }
 }

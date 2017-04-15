@@ -6,8 +6,19 @@
 class PostsNew
 {
 
-  function __construct()
+  function index()
   {
-    echo "PostsNew::__construct";
+    echo "PostsNew::index";
   }
+
+  function test()
+  {
+    echo "PostsNew::test";
+  }
+
+  function testPage()
+  {
+    echo "PostsNew::testPage";
+  }
+
 }

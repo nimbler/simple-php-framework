@@ -6,8 +6,8 @@
 class Posts
 {
 
-  function __construct()
+  function index()
   {
-    echo "Posts::__construct";
+    echo "Posts::index";
   }
 }

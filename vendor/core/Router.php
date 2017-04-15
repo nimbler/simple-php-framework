@@ -81,6 +81,12 @@ class Router
       self::upperCamelCase($controller);
       if (class_exists($controller)) {
         $cObj = new $controller;
+        $action = self::lowerCamelCase(self::$route['action']);
+        if (method_exists($cObj, $action)) {
+          $cObj->$action();
+        } else {
+          echo "Метод <b>$controller::$action</b> не найден" ;
+        }
       } else {
         echo "Контроллер <b>$controller</b> не найден";
       }
@@ -91,7 +97,7 @@ class Router
   }
 
   /**
-  * Приводим имя контроллера к нормальному виду
+  * Приводим имя контроллера к стандарту PSR
   * @param string $name
   * @return string
   */
@@ -101,5 +107,15 @@ class Router
     $name = ucwords($name);
     $name = str_replace(' ', '', $name);
     return $name;
+  }
+
+  /**
+  * Приводим имя экшена к стандарту PSR
+  * @param string $name
+  * @return string
+  */
+  protected static function lowerCamelCase($name)
+  {
+    return lcfirst(self::upperCamelCase($name));
   }
 }
