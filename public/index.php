@@ -4,6 +4,8 @@ echo $query = rtrim($_SERVER['QUERY_STRING'], '/');
 
 require '../vendor/core/Router.php';
 require '../vendor/libs/functions.php';
+require '../app/controllers/Main.php';
+require '../app/controllers/Posts.php';
 
 // Правила маршрутизации по умолчанию
 Router::add('^$', ['controller' => 'Main', 'action' => 'index']);

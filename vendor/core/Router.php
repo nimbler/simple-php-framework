@@ -78,7 +78,12 @@ class Router
   {
     if (self::matchRoute($url)) {
       http_response_code(200);
-      echo 'OK';
+      $controller = self::$route['controller'];
+      if (class_exists($controller)) {
+        echo 'OK';
+      } else {
+        echo "Контроллер <b>$controller</b> не найден";
+      }
     } else {
       http_response_code(404);
       echo '404';
