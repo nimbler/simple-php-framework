@@ -9,11 +9,15 @@ define('APP', dirname(__DIR__) . '/app');
 
 echo $query = rtrim($_SERVER['QUERY_STRING'], '/');
 
-require '../vendor/core/Router.php';
 require '../vendor/libs/functions.php';
-require '../app/controllers/Main.php';
-require '../app/controllers/Posts.php';
-require '../app/controllers/PostsNew.php';
+
+spl_autoload_register(function ($class)
+{
+  $file = ROOT . '/' . str_replace('\\', '/', $class) . '.php';
+  if (is_file($file)) {
+    require_once $file;
+  }
+});
 
 // Правила маршрутизации по умолчанию
 Router::add('^$', ['controller' => 'Main', 'action' => 'index']);
