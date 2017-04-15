@@ -12,4 +12,9 @@ class Posts
   {
     echo "Posts::index";
   }
+
+  function testAction()
+  {
+    echo "Posts::test";
+  }
 }
