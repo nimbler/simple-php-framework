@@ -6,19 +6,41 @@
 class Router
 {
 
-  protected static $routes = [];  // массив таблицы маршрутов
-  protected static $route = [];   // текущий маршрут
+  /**
+  * Таблица маршрутов
+  * @var array
+  */
+  protected static $routes = [];
 
+  /**
+  * Текущий маршрут
+  * @var array
+  */
+  protected static $route = [];
+
+  /**
+  * Добавляет маршрут в таблицу маршрутов
+  * @param string $regexp регулярное выражение маршрута
+  * @param array $route маршрут ([controller, action, params])
+  */
   public static function add($regexp, $route = [])
   {
     self::$routes[$regexp] = $route;
   }
 
+  /**
+  * Возвращает таблицу маршрутов
+  * @return array
+  */
   public static function getRoutes()
   {
     return self::$routes;
   }
 
+  /**
+  * Возвращает текущий маршрут (controller, action, [params])
+  * @return array
+  */
   public static function getRoute()
   {
     return self::$route;
@@ -27,6 +49,8 @@ class Router
   /**
   * Перебираем все маршруты в массиве $routes
   * При совподении помещаем текущий марщрут в массив $route и возвращаем true
+  * @param string $url входящий url
+  * @return boolean
   */
   public static function matchRoute($url)
   {
