@@ -80,8 +80,7 @@ class Router
       $controller = self::upperCamelCase(self::$route['controller']);
       self::upperCamelCase($controller);
       if (class_exists($controller)) {
-        http_response_code(200);
-        echo 'OK';
+        $cObj = new $controller;
       } else {
         echo "Контроллер <b>$controller</b> не найден";
       }

@@ -8,6 +8,6 @@ class PostsNew
 
   function __construct()
   {
-    # code...
+    echo "PostsNew::__construct";
   }
 }

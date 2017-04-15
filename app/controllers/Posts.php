@@ -8,6 +8,6 @@ class Posts
 
   function __construct()
   {
-    # code...
+    echo "Posts::__construct";
   }
 }

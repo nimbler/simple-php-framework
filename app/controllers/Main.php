@@ -8,6 +8,6 @@ class Main
 
   function __construct()
   {
-    # code...
+    echo "Main::__construct";
   }
 }
