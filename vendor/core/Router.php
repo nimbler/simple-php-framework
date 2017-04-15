@@ -66,6 +66,7 @@ class Router
         if (!isset($route['action'])) {
           $route['action'] = 'index';
         }
+        $route['controller'] = self::upperCamelCase($route['controller']);
         self::$route = $route;
         return true;
       }
@@ -79,7 +80,8 @@ class Router
   public static function dispatch($url)
   {
     if (self::matchRoute($url)) {
-      $controller = 'app\controllers\\' . self::upperCamelCase(self::$route['controller']);
+      $controller = 'app\controllers\\' . self::$route['controller'];
+      debug(self::$route);
       self::upperCamelCase($controller);
       if (class_exists($controller)) {
         $cObj = new $controller;
