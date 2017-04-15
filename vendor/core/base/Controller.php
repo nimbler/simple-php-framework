@@ -5,7 +5,7 @@ namespace vendor\core\base;
 /**
  *
  */
-abstract class controller
+abstract class Controller
 {
 
   public $route = [];
