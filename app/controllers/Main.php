@@ -5,7 +5,7 @@ namespace app\controllers;
 /**
  *
  */
-class Main
+class Main extends \vendor\core\base\Controller
 {
 
   function indexAction()

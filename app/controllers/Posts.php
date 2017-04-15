@@ -5,7 +5,7 @@ namespace app\controllers;
 /**
  *
  */
-class Posts
+class Posts extends \vendor\core\base\Controller
 {
 
   function indexAction()
