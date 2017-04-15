@@ -7,7 +7,7 @@ define('CORE', dirname(__DIR__) . '/vendor/core');
 define('ROOT', dirname(__DIR__));
 define('APP', dirname(__DIR__) . '/app');
 
-echo $query = rtrim($_SERVER['QUERY_STRING'], '/');
+$query = rtrim($_SERVER['QUERY_STRING'], '/');
 
 require '../vendor/libs/functions.php';
 
@@ -25,7 +25,5 @@ Router::add('^page/(?P<alias>[a-z-]+)$', ['controller' => 'Page', 'action' => 'v
 // Правила маршрутизации по умолчанию
 Router::add('^$', ['controller' => 'Main', 'action' => 'index']);
 Router::add('^(?P<controller>[a-z-]+)/?(?P<action>[a-z-]+)?$', []);
-
-debug(Router::getRoutes());
 
 Router::dispatch($query);

@@ -10,6 +10,6 @@ class Main extends \vendor\core\base\Controller
 
   function indexAction()
   {
-    echo "Main::index";
+    
   }
 }
