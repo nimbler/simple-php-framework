@@ -6,7 +6,7 @@
 class Posts
 {
 
-  function index()
+  function indexAction()
   {
     echo "Posts::index";
   }

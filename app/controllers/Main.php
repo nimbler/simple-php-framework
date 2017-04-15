@@ -6,7 +6,7 @@
 class Main
 {
 
-  function index()
+  function indexAction()
   {
     echo "Main::index";
   }

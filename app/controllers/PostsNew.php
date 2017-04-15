@@ -6,19 +6,24 @@
 class PostsNew
 {
 
-  function index()
+  function indexAction()
   {
     echo "PostsNew::index";
   }
 
-  function test()
+  function testAction()
   {
     echo "PostsNew::test";
   }
 
-  function testPage()
+  function testPageAction()
   {
     echo "PostsNew::testPage";
+  }
+
+  function before()
+  {
+    echo "PostsNew::before";
   }
 
 }
