@@ -30,7 +30,7 @@ class Router
   */
   public static function matchRoute($url)
   {
-    foreach (self::$roures as $pattern => $route) {
+    foreach (self::$routes as $pattern => $route) {
       if ($url == $pattern) {
         self::$route = $route;
         return true;
