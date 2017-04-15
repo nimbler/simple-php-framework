@@ -1,5 +1,6 @@
 <?php
 
+use vendor\core\Router;
 echo $query = rtrim($_SERVER['QUERY_STRING'], '/');
 
 require '../vendor/core/Router.php';
