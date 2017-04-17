@@ -5,11 +5,11 @@ namespace app\controllers;
 /**
  *
  */
-class Main extends \vendor\core\base\Controller
+class Main extends App
 {
 
   function indexAction()
   {
-    
+
   }
 }
