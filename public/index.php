@@ -8,7 +8,7 @@ define('ROOT', dirname(__DIR__));
 define('APP', dirname(__DIR__) . '/app');
 define('LAYOUT', 'default');
 
-$query = rtrim($_SERVER['QUERY_STRING'], '/');
+$query = $_SERVER['QUERY_STRING'];
 
 require '../vendor/libs/functions.php';
 
